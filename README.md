@@ -17,7 +17,7 @@ This is a simple projects of a course that helps students in particle physics to
 
 - **PYTHIA8+FASTJET3**: reconstruction with FASTJET3 from PYTHIA8 final state particles
 - **HERWIG7+FASTJET3**: reconstruction with FASTJET3 from HERWIG7 final state particles
-- **POWHEGBOX+PYTHIA8+FASTJET3**: reconstruction with FASTJET3 from PYTHIA8 final particles with cross sections for PYTHIA8 adjusted with POWHEGBOX
+- **POWHEGBOX+PYTHIA8+FASTJET3**: reconstruction with FASTJET3 from PYTHIA8 final particles with scattering amplitudes for PYTHIA8 adjusted with POWHEGBOX
 
 # Requirements
 
