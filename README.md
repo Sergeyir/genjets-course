@@ -98,7 +98,7 @@ Where $d^2N/dp_T dy$ - yields (i.e. obtained distributions), $\sigma_{tot}$ - ev
 Run the compiled executable of a simple example to generate 1000 events with pythia. You can change number of events if needed.
 
 ```sh
-bin/BasicGenerate 1000
+bin/BasicPythia 1000
 ```
 </details>
 
@@ -108,7 +108,7 @@ bin/BasicGenerate 1000
 Run the python script showing simple example to generate 1000 events with pythia. You can change number of events if needed
 
 ```sh
-python scripts/basic_generate.py -n 1000
+python scripts/basic_pythia.py -n 1000
 ```
 
 </details>
