@@ -35,7 +35,7 @@ ROOT6, LHAPDF6, PYTHIA8, and FASTJET3 have to be compiled with python3 if you wa
 # Installation
 
 ```sh
-git clone https://github.com/Sergeyir/HardProcessesLO --depth=1
+git clone https://github.com/Sergeyir/genjets-course --depth=1
 ```
 
 Install all requirements and configure environment variables described in [Installation tutorial](INSTALLATION_TUTORIAL.md)
