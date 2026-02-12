@@ -24,6 +24,4 @@
 #include "TFile.h"
 #include "TH1D.h"
 
-int main(int argc, char **argv);
-
 #endif /* BASIC_PYTHIA_HPP */
