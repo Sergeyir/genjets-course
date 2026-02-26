@@ -187,8 +187,7 @@ Finally set environmental variables
 
 ```sh
 export HEPMC_PATH=$PACKAGE_PATH/HepMC3
-export PYTHONPATH=$FASTJET3_PATH/lib/python3.XX/site-packages:$PYTHONPATH
-export LD_LIBRARY_PATH=$FASTJET3_PATH/lib:$LD_LIBRARY_PATH
+export PYTHONPATH=$HEPMC3_PATH/outputs/lib:$PYTHONPATH
 ```
 
 ## How to check the installation
