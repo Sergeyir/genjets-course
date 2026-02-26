@@ -4,6 +4,7 @@
 - [LHAPDF6](#lhapdf6)
 - [PYTHIA8](#pythia8)
 - [FASTJET3](#fastjet3)
+- [HepMC](#hepmc)
 - [How to check the installation](#how-to-check-the-installation)
 - [HERWIG7](#herwig7)
 - [POWHEGBOX](#powhegbox)
@@ -150,12 +151,28 @@ After compile the code by running
 make install -j
 ```
 
-Lastly add to the your profile (replace 3.X.X and 3.XX with your fastjet and python version numbers respectively)
+Lastly add to your profile (replace 3.X.X and 3.XX with your fastjet and python version numbers respectively)
 
 ```sh
 export FASTJET3_PATH=$PACKAGE_PATH/fastjet-3.X.X/build
 export PYTHONPATH=$FASTJET3_PATH/lib/python3.XX/site-packages:$PYTHONPATH
 export LD_LIBRARY_PATH=$FASTJET3_PATH/lib:$LD_LIBRARY_PATH
+```
+
+## HepMC
+
+First find the package for your distribution containing VDT library (can be cern-vdt, libvdt-dev) and install it. This library is a reuirement for HepMC. 
+
+HepMC can be isntalled via package manager on some distributions. See if your package manager contain hepmc package [here](https://gitlab.cern.ch/hepmc/HepMC3). Also note, that libraries for python need to be installed separately, which can be done with package manager or pip, if available. If there is no installation candidates for you, you can compile it yourself. I recommend first heading into $PACKAGE_PATH directory and then you clone the repository:
+
+```sh
+git clone https://gitlab.cern.ch/hepmc/HepMC3 --depth=1
+```
+
+Then head into HepMC3 directory, create a buid directory, and run cmake to generate a Makefile
+
+```sh
+mkdir build ; cmake -DHEPMC3_BUILD_EXAMPLES=ON
 ```
 
 ## How to check the installation
