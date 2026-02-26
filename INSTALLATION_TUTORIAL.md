@@ -130,7 +130,7 @@ export LD_LIBRARY_PATH=$PYTHIA8_PATH/lib:$LD_LIBRARY_PATH
 
 ## FASTJET3
 
-FASTJET3 can be installed via some package managers (such as pacman, dnf, portage, etc.). If your system package manager doesn't have lhapdf repository you can follow instructions below.
+FASTJET3 can be installed via some package managers (such as pacman, dnf, portage, etc.). If your system package manager doesn't have fastjet repository you can follow instructions below.
 
 Install [swig](https://www.swig.org/) package first (it can be installed with package manager). After, download the source code from [here](https://fastjet.fr/). Place the .tar.gz file in $PACKAGE_PATH. After heading there run to extract files
 
@@ -161,29 +161,48 @@ export LD_LIBRARY_PATH=$FASTJET3_PATH/lib:$LD_LIBRARY_PATH
 
 ## HepMC
 
-First find the package for your distribution containing VDT library (can be cern-vdt, libvdt-dev) and install it. This library is a reuirement for HepMC. 
+First find the package for your distribution containing VDT library (can be cern-vdt, libvdt-dev) and install it. This library is a requirement for HepMC. 
 
-HepMC can be isntalled via package manager on some distributions. See if your package manager contain hepmc package [here](https://gitlab.cern.ch/hepmc/HepMC3). Also note, that libraries for python need to be installed separately, which can be done with package manager or pip, if available. If there is no installation candidates for you, you can compile it yourself. I recommend first heading into $PACKAGE_PATH directory and then you clone the repository:
+HepMC can be installed via package manager on some distributions. See if your package manager contain hepmc package [here](https://gitlab.cern.ch/hepmc/HepMC3). Also note, that libraries for python need to be installed separately, which can be done with package manager or pip, if available. If there is no installation candidates for you, you can compile it yourself. I recommend first heading into $PACKAGE_PATH directory and then you clone the repository:
 
 ```sh
 git clone https://gitlab.cern.ch/hepmc/HepMC3 --depth=1
 ```
 
-Then head into HepMC3 directory, create a buid directory, and run cmake to generate a Makefile
+Then head into HepMC3 directory and run cmake to generate a Makefile
 
 ```sh
-mkdir build ; cmake -DHEPMC3_BUILD_EXAMPLES=ON
+cmake -DHEPMC3_BUILD_EXAMPLES=ON
+```
+
+After it is done, compile libraries with
+
+```sh
+make -j2
+```
+
+You can set higher number of threads for compilation, if you have sufficient RAM (more than ~2.5 GB per thread) otherwise you may run out of it.
+
+Finally set environmental variables
+
+```sh
+export HEPMC_PATH=$PACKAGE_PATH/HepMC3
+export PYTHONPATH=$FASTJET3_PATH/lib/python3.XX/site-packages:$PYTHONPATH
+export LD_LIBRARY_PATH=$FASTJET3_PATH/lib:$LD_LIBRARY_PATH
 ```
 
 ## How to check the installation
 
-If you followed throught the above instructions you can check if packages mentioned in these instruction were installed succesfully by running in python
+For c++ you can run cmake in genjets-course root directory to test if all packages were installed successfully.
+
+If you followed through the above instructions you can check if packages mentioned in these instruction were installed successfully by running in python
 
 ```py
-import root
+import ROOT
 import lhapdf
 import pythia8
 import fastjet
+import hepmc
 ```
 If no errors occurred, the installation was successful
 
