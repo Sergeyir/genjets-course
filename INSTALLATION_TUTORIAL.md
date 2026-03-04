@@ -55,9 +55,26 @@ Alternatively, you can also compile ROOT6 yourself, however it will take quite a
 
 ## LHAPDF6
 
-LHAPDF6 can be installed via some package managers (see "System package managers" [here](https://www.lhapdf.org/install.html)). If no option is available to you follow instructions below.
+LHAPDF6 can be installed via some package managers (see "System package managers" [here](https://www.lhapdf.org/install.html)).
+<details>
+<summary> Installation with package manager </summary>
+If you installed lhapdf with the package manager set the environmental variable in your profile of pdf directory to avoid saving pdfs in root (recommended to save in $PACKAGE_PATH/lhapdfsets, but you can change it to the directory you want):
 
+```sh 
+export LHAPDF_DATA_PATH=$PACKAGE_PATH/lhapdfsets
+``` 
 
+After that run to load index in the pdf directory
+
+```sh
+lhapdf update
+```
+</details>
+
+If the package manager installation option is unavailable to you, follow the instructions below.
+
+<details>
+<summary> Manual installation </summary>
 Download the source code from [here](https://lhapdf.hepforge.org/downloads/). Place the downloaded .tar.gz file in $PACKAGE_PATH. After heading there substitute the "name_of_file.tar.gz" for your .tar.gz file name containing LHAPDF6 package and run
 
 
@@ -96,6 +113,7 @@ or
 ```sh
 export PYTHONPATH=$LHAPDF6_PATH/lib/python3.XX/dist-packages/lhapdf:$PYTHONPATH
 ```
+</details>
 
 ## PYTHIA8
 
@@ -207,7 +225,29 @@ If no errors occurred, the installation was successful
 
 ## HERWIG7
 
-Instructions will be here soon
+In order to avoid compling boost library that is required by Herwig7, install it via package manager. Create the directory for Herwig7 (prefferably in your $PACKAGE_PATH), for example:
+
+```sh
+mkdir herwig && cd herwig
+```
+
+Then run to install herwig-boostrap script
+
+```sh
+wget https://herwig.hepforge.org/downloads/herwig-bootstrap
+```
+
+Herwig also requires some pdfs in LHAPDF already downloaded at the compilation step. To download them run
+
+```sh
+lhapdf install CT14lo CT14nlo
+```
+
+If you have succesfully finished the installation of previous packages and specified the corresponding environmental variables, you can run to compile everything needed for Herwig7. Even though many unnecessary packages are excluded and the lite option is chosen, the compilation can take a long time and it is recommended to avoid using -jN option (where N - number of threads) unless you are not sure that your machine can handle it (at least 2GB of RAM per thread and enough thermal and cooling capacity of your CPU).
+
+```sh
+./herwig-bootstrap --without-boost --with-fastjet=`$FASTJET_PATH/bin/fastjet-config --prefix` --with-lhapdf=`$LHAPDF_PATH/bin/lhapdf-config --prefix` --with-hepmc=`$HEPMC3_PATH/HepMC3-config.in --prefix` --without-evtgen --without-fastjet_contrib --without-yoda --lite .
+```
 
 ## POWHEG
 
