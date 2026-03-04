@@ -29,7 +29,8 @@ Install the [required dependencies](https://root.cern/install/dependencies/).
 
 Then install ROOT6 via package manager (if available, [see here](https://root.cern/install/)) or pre-compiled release for your platform [here](https://root.cern/install/all_releases/).
 
-### Pre-compiled release
+<details>
+<summary> Installing the pre-compiled release </summary>
 
 If your option is the installation of pre-compiled release, after downloading place the .tar.gz file in $PACKAGE_PATH. After heading in $PACKAGE_PATH substitute the "name_of_file.tar.gz" for your .tar.gz file name containing ROOT6 package and run
 
@@ -44,14 +45,14 @@ export ROOT_PATH=$PACKAGE_PATH/root
 
 source $ROOT_PATH/bin/thisroot.sh
 ```
+</details>
 
-### Installation with package manager
+<details>
+<summary> Building ROOT from source </summary>
 
-With package manager compiled root binaries will be located at /bin and libraries at /lib. In this case no $ROOT_PATH is not needed to be added to your profile.
+Alternatively, you can also compile ROOT6 yourself, however it will take quite a lot of computational power and might take a long time to compile. This step is **not recommended** if you do not have enough experience compiling packages from source. But if you are determined see [Building ROOT from source](https://root.cern/install/#build-from-source)
 
-### ROOT6 compilation
-
-Alternatively, you can also compile ROOT6 yourself, however it will take quite a lot of computational power and might take a long time to compile. This step is **not recommended** if you do not have enough experience compiling packages from source.
+</details>
 
 ## LHAPDF6
 
@@ -119,6 +120,8 @@ export PYTHONPATH=$LHAPDF6_PATH/lib/python3.XX/dist-packages/lhapdf:$PYTHONPATH
 
 PYTHIA8 can be installed via some package managers (such as pacman, dnf, portage, etc.). If your system package manager doesn't have pythia8 repository you can follow instructions below (additionally python-pythia8 may be required if available or similar package).
 
+<details>
+<summary> Manual installation </summary>
 
 Download the source code from [here](https://pythia.org/). Place the downloaded .tgz file in $PACKAGE_PATH. After heading there substitute the "name_of_file.tgz" for your .tgz file name containing PYTHIA8 package and run
 
@@ -145,10 +148,14 @@ export PYTHIA8_PATH=$PACKAGE_PATH/pythia8XXX
 export PYTHONPATH=$PYTHIA8_PATH/lib:$PYTHONPATH
 export LD_LIBRARY_PATH=$PYTHIA8_PATH/lib:$LD_LIBRARY_PATH
 ```
+</details>
 
 ## FASTJET3
 
 FASTJET3 can be installed via some package managers (such as pacman, dnf, portage, etc.). If your system package manager doesn't have fastjet repository you can follow instructions below.
+
+<details>
+<summary> Manual installation </summary>
 
 Install [swig](https://www.swig.org/) package first (it can be installed with package manager). After, download the source code from [here](https://fastjet.fr/). Place the .tar.gz file in $PACKAGE_PATH. After heading there run to extract files
 
@@ -176,6 +183,8 @@ export FASTJET3_PATH=$PACKAGE_PATH/fastjet-3.X.X/build
 export PYTHONPATH=$FASTJET3_PATH/lib/python3.XX/site-packages:$PYTHONPATH
 export LD_LIBRARY_PATH=$FASTJET3_PATH/lib:$LD_LIBRARY_PATH
 ```
+
+</details>
 
 ## HepMC
 
