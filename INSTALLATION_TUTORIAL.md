@@ -255,7 +255,10 @@ lhapdf install CT14lo CT14nlo
 If you have succesfully finished the installation of previous packages and specified the corresponding environmental variables, you can run to compile everything needed for Herwig7. Even though many unnecessary packages are excluded and the lite option is chosen, the compilation can take a long time and it is recommended to avoid using -jN option (where N - number of threads) unless you are sure that your machine can handle it (at least 2GB of RAM per thread and enough thermal and cooling capacity of your CPU).
 
 ```sh
-./herwig-bootstrap --without-boost --with-fastjet=`$FASTJET_PATH/bin/fastjet-config --prefix` --with-lhapdf=`$LHAPDF_PATH/bin/lhapdf-config --prefix` --with-hepmc=`$HEPMC3_PATH/HepMC3-config.in --prefix` --without-evtgen --without-fastjet_contrib --without-yoda --lite .
+./herwig-bootstrap --without-boost --with-fastjet=`$FASTJET_PATH/bin/fastjet-config --prefix` \
+                   --with-lhapdf=`$LHAPDF_PATH/bin/lhapdf-config --prefix` \
+                   --with-hepmc=`$HEPMC3_PATH/HepMC3-config.in --prefix` \
+                   --without-evtgen --without-fastjet_contrib --without-yoda --lite .
 ```
 
 ## POWHEG
