@@ -117,6 +117,33 @@ python scripts/basic_pythia.py -n 1000
 
 Info will appear soon
 
+<!--
+
+[Herwig event generation workflow tutorial](https://herwig.hepforge.org/tutorials/workflow/eventgeneration.html#standard-event-generation)
+
+Choose the directory you want to put all Herwig input and output files. After heading there copy the file that has general instructins for LHC-type events generation
+
+```sh
+cp $HERWIG_PATH/share/Herwig/LHC.in my_gen.in
+```
+
+Check the contents of the file. Change the fields if necessary. After that you can build my_gen.run - set of instruction for Herwig:
+
+```sh
+Herwig build my_gen.in
+```
+
+Then you can run the generation with the following commands:
+
+```sh
+Herwig read my_gen.in
+Herwig run my_gen.in
+```
+
+You will get the output file(s) that can be read with HepMC
+
+-->
+
 ## POWHEGBOX+PYTHIA8+FASTJET
 
 Info will appear soon
