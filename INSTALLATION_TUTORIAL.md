@@ -246,7 +246,7 @@ import ROOT
 import lhapdf
 import pythia8
 import fastjet
-import hepmc
+import pyHepMC3
 ```
 If no errors occurred, the installation was successful
 
