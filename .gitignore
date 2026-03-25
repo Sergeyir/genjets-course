@@ -21,6 +21,10 @@ __*
 *.so
 *.a
 *.cmake
+*.run
+*.out
+*.hepmc
+*.tex
 
 CMakeCache.txt
 Makefile
