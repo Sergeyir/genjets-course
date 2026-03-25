@@ -115,34 +115,21 @@ python scripts/basic_pythia.py -n 1000
 
 ## HERWIG+FASTJET
 
-Info will appear soon
+In this repository only the simplest example is shown. For more information see [Herwig event generation workflow tutorial](https://herwig.hepforge.org/tutorials/workflow/eventgeneration.html#standard-event-generation).
 
-<!--
-
-[Herwig event generation workflow tutorial](https://herwig.hepforge.org/tutorials/workflow/eventgeneration.html#standard-event-generation)
-
-Choose the directory you want to put all Herwig input and output files. After heading there copy the file that has general instructins for LHC-type events generation
+For the purpose of this course the simplest example for Herwig input file is shown in herwig directory located in this repository. Head there and run to read this input file
 
 ```sh
-cp $HERWIG_PATH/share/Herwig/LHC.in my_gen.in
+Herwig read BasicPP.in
 ```
 
-Check the contents of the file. Change the fields if necessary. After that you can build my_gen.run - set of instruction for Herwig:
+Herwig will generate BasicPP.run file with all parameters important for event generation. You then can just run to generate 100 events:
 
 ```sh
-Herwig build my_gen.in
+Herwig run BasicPP.run -N 100
 ```
 
-Then you can run the generation with the following commands:
-
-```sh
-Herwig read my_gen.in
-Herwig run my_gen.in
-```
-
-You will get the output file(s) that can be read with HepMC
-
--->
+You can specify any number of events you want but be sure you have enough space (10000 events take ~1.5 GB of space).
 
 ## POWHEGBOX+PYTHIA8+FASTJET
 
