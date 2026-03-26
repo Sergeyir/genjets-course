@@ -282,8 +282,8 @@ If you have succesfully finished the installation of previous packages and speci
 Set the following environmental variables so it would be easier to use Herwig:
 
 ```sh
-export HERWIG_PATH=$PACKAGE_PATH/herwig
-export PATH=$HERWIG_PATH/bin:$PATH
+export HERWIG7_PATH=$PACKAGE_PATH/herwig
+export PATH=$HERWIG7_PATH/bin:$PATH
 ```
 
 ## POWHEG
