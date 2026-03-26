@@ -115,7 +115,7 @@ int main(int argc, char **argv)
             // Neutral particles are usually excluded although photons and neutral hadrons can 
             // be used and sometimes are included which is what we are going to do in this work
 
-            // To do: add a check that only allows stable detectable 
+            // To do: add a check that only allows detectable 
             // particles to be used for jet reconstruction
             // To do: add a check that only allows particles within allowed pseudorapidity range
 
