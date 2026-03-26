@@ -13,7 +13,7 @@
 
 # Overview
 
-This is a simple projects of a course that helps students in particle physics to study hard processes in p+p collisions at high energy and to learn high energy physics software. The goal is for the students to perform a numerical calculation of $d^2 \sigma/dp_{T} dy$ of jets reconstructed from particles within $\left|\eta\right| < 1$. The calculation is performed in several ways:
+This is a simple projects of a course that helps students in particle physics to study hard processes in p+p collisions at high energy and to learn high energy physics software. The goal is for the students to perform a numerical calculation of $d^2 \sigma/dp_{T} dy$ of jets reconstructed from particles within $\left|\eta\right| < 1$ for $\left|y\right| < 0.5$ and $0.5 < \left|y\right| < 1$. The calculation is performed in several ways:
 
 - **PYTHIA8+FASTJET3**: reconstruction with FASTJET3 from PYTHIA8 final state particles
 - **HERWIG7+FASTJET3**: reconstruction with FASTJET3 from HERWIG7 final state particles
@@ -85,10 +85,11 @@ The examples listed in this section are incomplete and only consist of simple co
 In general in examples distribution of quantities are obtained which then have to be used to obtain differential cross-section with the use of the following formula:
 
 ```math
-\frac{1}{2 \pi p_T} \frac{d^2 \sigma}{dp_T dy} = \frac{1}{2 \pi p_T} \frac{d^2 N}{d p_T dy} \sigma_{tot}
+\frac{1}{2 \pi p_T} \frac{d^2 \sigma}{dp_T dy} = \frac{1}{2 \pi p_T \Delta y} \frac{d N}{d p_T} \sigma_{tot}
 ```
 
 Where $d^2N/dp_T dy$ - yields (i.e. obtained distributions), $\sigma_{tot}$ - event total cross section.
+Where $\Delta y$ - rapidity range for the given $p_T$ bin (this course case: $y \approx \eta$)
 
 ## PYTHIA8+FASTJET3
 

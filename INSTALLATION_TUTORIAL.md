@@ -252,6 +252,8 @@ If no errors occurred, the installation was successful
 
 ## HERWIG7
 
+Herwig requiers cython and autoreconf (automake package) for installation.
+
 In order to avoid compling boost library that is required by Herwig7, install it via package manager. Create the directory for Herwig7 (prefferably in your $PACKAGE_PATH), for example:
 
 ```sh
