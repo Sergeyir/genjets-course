@@ -137,7 +137,7 @@ int main(int argc, char **argv)
       // iterating over reconstructed jets
       for (unsigned int j = 0; j < inclusiveJets.size(); j++)
       {
-         // To do : add a check that tests whether jets are within the needed rapidity range
+         // To do : add a check that tests whether jets are within the needed pseudorapidity range
          distrJetsPT.Fill(inclusiveJets[j].pt(), eventWeight);
       }
    }
