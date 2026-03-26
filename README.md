@@ -100,6 +100,8 @@ Run the compiled executable of a simple example to generate 1000 events with pyt
 ```sh
 bin/BasicPythia 1000
 ```
+
+The code is located in src and include directories
 </details>
 
 <details>
@@ -110,6 +112,8 @@ Run the python script showing simple example to generate 1000 events with pythia
 ```sh
 python scripts/basic_pythia.py -n 1000
 ```
+
+The code located in scripts directory
 
 </details>
 
