@@ -74,7 +74,7 @@ int main(int argc, char **argv)
 
    // To do: change the distribution above to jet counts vs pT vs y and
    // change all following distrJetsPT instances accordingly
-   // more info on TH2D you can find on https://root.cern.ch/doc/master/classTH1.html
+   // more info on TH2D you can find on https://root.cern.ch/doc/master/classTH2.html
 
    // you can read more about fastjet and its usage on 
    // https://indico.cern.ch/event/264054/contributions/592237/attachments/467910/648313/fastjet-doc-3.0.3.pdf
