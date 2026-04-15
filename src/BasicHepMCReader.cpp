@@ -14,7 +14,8 @@
 #include <iostream>
 
 // To do: add the same restrictions as you use in your pythia generation code 
-// and add jet reconstructin with FastJet
+// and add jet reconstructin with FastJet ; after that the cross section calculation
+// is no different from you pythia code
 
 int main(int argc, char **argv) 
 {
@@ -30,7 +31,7 @@ int main(int argc, char **argv)
 
 	int eventsParsed = 0;
 
-	while(!inputFile.failed()) 
+	while (!inputFile.failed()) 
    {
       // See HepMC3::GenEvent for how to obtain more info on event:
       // https://dayabay.bnl.gov/dox/HepMC/html/classHepMC_1_1GenEvent.html
@@ -38,9 +39,6 @@ int main(int argc, char **argv)
 
 		// Read event from input file
 		inputFile.read_event(evt);
-
-		// If reading failed - exit loop
-		if (inputFile.failed()) break;
 
 		if (eventsParsed == 0) 
       {
@@ -77,23 +75,24 @@ int main(int argc, char **argv)
             HepMC3::Print::line(hi);
 			}
 			else std::cout << " No GenHeavyIon " << std::endl;
+
+         // See HepMC3::GenParticle class reference for more info on how to obtain particle properties:
+         // https://dayabay.bnl.gov/dox/HepMC/html/classHepMC_1_1GenParticle.html
+         for (const auto& p : evt.particles())
+         {
+            // final particles have no vertex (no scattering and no interaction)
+            if (p->end_vertex() == nullptr) 
+            {
+               // the following line shows how to obtain basic particles info
+               std::cout << p->pid() << " " << p->momentum().e() << " " << p->momentum().px() << 
+                            " " << p->momentum().py() << p->momentum().pz() << std::endl;
+            }
+         }
 		}
 
-		++eventsParsed;
 		if (eventsParsed % 100 == 0) std::cout << "Events parsed: "<< eventsParsed << std::endl;
 
-      // See HepMC3::GenParticle class reference for more info on how to obtain particle properties:
-      // https://dayabay.bnl.gov/dox/HepMC/html/classHepMC_1_1GenParticle.html
-      for (const auto& p : evt.particles())
-      {
-         // final particles have no vertex (no scattering and no interaction)
-         if (p->end_vertex() == nullptr) 
-         {
-            // the following line shows how to obtain basic particles info
-            std::cout << p->pid() << " " << p->momentum().e() << " " << p->momentum().px() << 
-                         " " << p->momentum().py() << p->momentum().pz() << std::endl;
-         }
-      }
+		++eventsParsed;
 	}
 
 	inputFile.close();
