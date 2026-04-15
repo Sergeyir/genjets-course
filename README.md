@@ -136,6 +136,30 @@ Herwig run BasicPP.run -N 100
 
 You can specify any number of events you want but be sure you have enough space (10000 events take ~1.5 GB of space).
 
+After running Herwig, .hepmc file will be generated. And if you followed the example above, BasicPP.hepmc will appear in herwig directory. Head into the root of the repository and see the following instruction on how to read this file.
+
+<details>
+<summary> C++ </summary>
+Check code for reading .hepmc file in files include/BasicHepMCReader.hpp and src/BasicHepMCReader.cpp and see "To do" instructions. After compiling with make you can run 
+
+```sh
+./bin/BasicHepMC3Reader herwig/BasicPP.hepmc
+```
+
+You can substitute "herwig/BasicPP.hepmc" argument for whatever file you want to read. 
+</details>
+
+<details>
+<summary> python </summary>
+Check code for reading .hepmc file in file scripts/basic_hepmc_reader.py and see "To do" instructions. You can run it with 
+
+```sh
+python scripts/basic_hepmc_reader.py -i herwig/BasicPP.hepmc
+```
+
+You can substitute "herwig/BasicPP.hepmc" argument for whatever file you want to read. 
+</details>
+
 ## POWHEGBOX+PYTHIA8+FASTJET
 
 Info will appear soon
