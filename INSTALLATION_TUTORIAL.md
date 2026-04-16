@@ -302,7 +302,7 @@ Then head in POWHEG-BOX-V2 directory. It contains the general use code, but we n
 git submodule update --remote --init "dijet"
 ```
 
-PowHeg cannot find includes by itself (although it can find configs). So you would need to add the following lines to your profile
+PowHeg cannot find includes by itself (although it can find configs). So you would need to add the following lines to your profile if you install LHAPDF6 and FastJet3 manually
 
 ```sh
 export CPATH=$LHAPDF6_PATH/include:$CPATH
