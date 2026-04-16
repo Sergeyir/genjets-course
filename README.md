@@ -175,7 +175,7 @@ ndns2 131            ! pdf set for hadron 2 (mlm numbering) -> ! ndns2 131      
 The following line is but a comment but I recommend to change it so it would not confuse you later
 
 ```
-! 10050 cteq6m -> ! ! 10050 NNPDF31_nlo_as_0118
+! 10050 cteq6m -> ! 303400 NNPDF31_nlo_as_0118
 ```
 
 ```
