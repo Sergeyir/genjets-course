@@ -7,7 +7,7 @@
 - [HepMC](#hepmc)
 - [How to check the installation](#how-to-check-the-installation)
 - [HERWIG7](#herwig7)
-- [POWHEGBOX](#powhegbox)
+- [POWHEG-BOX](#powheg-box)
 
 # Installation tutorial
 
@@ -62,7 +62,7 @@ import root
 
 ## LHAPDF6
 
-LHAPDF6 can be installed via some package managers (see "System package managers" [here](https://www.lhapdf.org/install.html)).
+LHAPDF6 can be installed via some package managers (see "System package managers" [here](https://www.lhapdf.org/install.html)). If installation with package manager fails, and the following instructions don't work, or you want to configure installation for yourself consult the [LHAPDF6 official installation tutorial](https://www.lhapdf.org/install.html)
 <details>
 <summary> Installation with package manager </summary>
 If you installed lhapdf with the package manager set the environmental variable in your profile of pdf directory to avoid saving pdfs in root (recommended to save in $PACKAGE_PATH/lhapdfsets, but you can change it to the directory you want):
@@ -135,7 +135,7 @@ Download the source code from [here](https://pythia.org/). Place the downloaded 
 tar -xvzf "name_of_file.tgz"
 ```
 
-Then head into pythia8XXX directory (8XXX is the version you downloaded, replace X for your version). First run to configure (you might need to change /bin/python-config to /bin/python3-config)
+Then head into pythia8XXX directory (8XXX is the version you downloaded, replace X for your version). If you have troubles with the following instructions or you want to configure the installation for yourself consult the README file in pythia8XXX directory. Otherwise, first run to configure (you might need to change /bin/python-config to /bin/python3-config), which will generate Makefile
 
 ```sh
 ./configure --with-python-config=/bin/python-config --with-lhapdf6-config=$LHAPDF6_PATH/bin/lhapdf-config
@@ -158,7 +158,7 @@ export LD_LIBRARY_PATH=$PYTHIA8_PATH/lib:$LD_LIBRARY_PATH
 
 ## FASTJET3
 
-FASTJET3 can be installed via some package managers (such as pacman, dnf, portage, etc.). If your system package manager doesn't have fastjet repository you can follow instructions below.
+FASTJET3 can be installed via some package managers (such as pacman, dnf, portage, etc.). If your system package manager doesn't have fastjet repository you can follow instructions below. And if the following instructions don't work or you want to configure it for yourself follow the [FatJet3 official manual instructions](https://fastjet.fr/repo/fastjet-doc-3.5.1.pdf#page=58)
 
 <details>
 <summary> Manual installation </summary>
@@ -288,6 +288,30 @@ export HERWIG7_PATH=$PACKAGE_PATH/herwig
 export PATH=$HERWIG7_PATH/bin:$PATH
 ```
 
-## POWHEG
+## POWHEG-BOX
 
-Instructions will be here soon
+Clone the POWHEG-BOX-V2 repository in the preffered directory ($PACKAGE_PATH is recommended)
+
+```sh
+git clone https://gitlab.com/POWHEG-BOX/V2/POWHEG-BOX-V2 --depth=1
+```
+
+Then head in POWHEG-BOX-V2 directory. It contains the general use code, but we need a specific process for this project - dijets production at NLO. All important files for this process are in submodule dijets which can be downloaded by running
+
+```sh
+git submodule update --remote --init "dijet"
+```
+
+Then head into dijet directory and run to compile all needed for our purposes code
+
+```sh
+make
+```
+
+To check the installation see [README section for POWHEG](README.md#powhegbox+pythia8+fastjet)
+
+This will also generate executable pwhg_main and testrun- directories. Head into one of them - testrun-lhc and check if everything works
+
+```sh
+../phwg_main
+```

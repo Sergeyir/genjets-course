@@ -64,7 +64,7 @@ lhapdf install name_of_pdf_set
 
 Or by installing it in .tar.gz format from https://www.lhapdf.org/pdfsets.html and extracting it into $LHAPDF_PATH/share/LHAPDF directory.
 
-In the current repository example NNPDF31_lo_as_0118 pdf set is used, so install it as well to test if everything works fine.
+In the current repository example NNPDF31_lo_as_0118 and NNPDF31_lo_as_0118 pdf sets are used, so install them as well to test if the code works fine.
 </details>
 
 <details>
@@ -162,7 +162,52 @@ You can substitute "herwig/BasicPP.hepmc" argument for whatever file you want to
 
 ## POWHEGBOX+PYTHIA8+FASTJET
 
-Info will appear soon
+<details>
+<summary> Calculating scattering amplitudes with PowHegBox </summary>
+
+After downloading and compiling code for dijets submodule, head into testrun-lhc directory. There you need to change file powheg.input (commenting out default PDF implementation and adding LHAPDF)
+
+```
+ndns1 131            ! pdf set for hadron 1 (mlm numbering) -> ! ndns1 131            ! pdf set for hadron 1 (mlm numbering)
+ndns2 131            ! pdf set for hadron 2 (mlm numbering) -> ! ndns2 131            ! pdf set for hadron 2 (mlm numbering)
+```
+
+The following line is but a comment but I recommend to change it so it would not confuse you later
+
+```
+! 10050 cteq6m -> ! ! 10050 NNPDF31_nlo_as_0118
+```
+
+```
+! lhans1  10050      ! pdf set for hadron 1 (LHA numbering) -> lhans1  303400      ! pdf set for hadron 1 (LHA numbering)
+! lhans2  10050      ! pdf set for hadron 2 (LHA numbering) -> lhans2  303400      ! pdf set for hadron 2 (LHA numbering)
+```
+
+Also change other important parameters if needed (for example ebeam1, ebeam2). And since we specified NNPDF31_nlo_as_0118 pdf set, don't forget to download it via lhapdf or manually.
+
+Then run the pwgh_main executable, which will calculate "numevts" (specified in powheg.input) number of events. Calculation will take some time, so you may as well at first set 100 events to check if it works and to estimate how long it will take to calculate more events on your machine (as stated in manual 50000 events should take around 3 hours).
+
+```
+../pwhg_main
+```
+
+After the executable finishes running you will get pwgevent.lhe file which you can use in the following instructions for pythia8 event generation.
+
+More info about dijet production can be found in Docs/manual-BOX-Dijet.pdf located in dijet directory.
+
+</details>
+
+<details>
+<summary> Using PowHegBox output for pythia8 event generation </summary>
+
+You can use the same code you did for generating pythia8 events before, however change the pdf set, and set the following parameters to pythia (more info on beam parameters can be found [here](https://pythia.org/latest-manual/BeamParameters.html))
+
+```
+Beams:frameType = 4
+Beams:LHEF = path_to_powheg_output_file.lhe
+```
+
+</details>
 
 <!--
 # Using this project for teaching
