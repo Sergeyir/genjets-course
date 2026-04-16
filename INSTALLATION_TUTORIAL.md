@@ -107,7 +107,6 @@ Lastly add the following lines to your profile (replace 6.X.X with your LHAPDF6 
 export LHAPDF6_PATH=$PACKAGE_PATH/LHAPDF-6.X.X/build/
 export LD_LIBRARY_PATH=$LHAPDF6_PATH/lib:$LD_LIBRARY_PATH
 export PATH=$LHAPDF6_PATH/bin:$PATH
-export CPATH=$LHAPDF6_PATH/include:$CPATH
 ```
 
 Also add the path to \_\_init.py\_\_ located somewhere in $LHAPDF6_PATH/lib/python3.XX/. This path might change with the distro, python, and LHAPDF versions. The resulting line you need to add might look like the following
@@ -189,7 +188,6 @@ Lastly add to your profile (replace 3.X.X and 3.XX with your fastjet and python 
 export FASTJET3_PATH=$PACKAGE_PATH/fastjet-3.X.X/build
 export PYTHONPATH=$FASTJET3_PATH/lib/python3.XX/site-packages:$PYTHONPATH
 export LD_LIBRARY_PATH=$FASTJET3_PATH/lib:$LD_LIBRARY_PATH
-export CPATH=$PACKAGE_PATH/fastjet-3.X.X/include:$CPATH
 ```
 
 </details>
@@ -302,6 +300,13 @@ Then head in POWHEG-BOX-V2 directory. It contains the general use code, but we n
 
 ```sh
 git submodule update --remote --init "dijet"
+```
+
+PowHeg cannot find includes by itself (although it can find configs). So you would need to add the following lines to your profile
+
+```sh
+export CPATH=$LHAPDF6_PATH/include:$CPATH
+export CPATH=$PACKAGE_PATH/fastjet-3.X.X/include:$CPATH
 ```
 
 Then head into dijet directory and run to compile all needed for our purposes code
