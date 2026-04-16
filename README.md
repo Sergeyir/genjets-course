@@ -172,15 +172,15 @@ ndns1 131            ! pdf set for hadron 1 (mlm numbering) -> ! ndns1 131      
 ndns2 131            ! pdf set for hadron 2 (mlm numbering) -> ! ndns2 131            ! pdf set for hadron 2 (mlm numbering)
 ```
 
+```
+! lhans1  10050      ! pdf set for hadron 1 (LHA numbering) -> lhans1  303400      ! pdf set for hadron 1 (LHA numbering)
+! lhans2  10050      ! pdf set for hadron 2 (LHA numbering) -> lhans2  303400      ! pdf set for hadron 2 (LHA numbering)
+```
+
 The following line is but a comment but I recommend to change it so it would not confuse you later
 
 ```
 ! 10050 cteq6m -> ! 303400 NNPDF31_nlo_as_0118
-```
-
-```
-! lhans1  10050      ! pdf set for hadron 1 (LHA numbering) -> lhans1  303400      ! pdf set for hadron 1 (LHA numbering)
-! lhans2  10050      ! pdf set for hadron 2 (LHA numbering) -> lhans2  303400      ! pdf set for hadron 2 (LHA numbering)
 ```
 
 Also change other important parameters if needed (for example ebeam1, ebeam2). And since we specified NNPDF31_nlo_as_0118 pdf set, don't forget to download it via lhapdf or manually.
