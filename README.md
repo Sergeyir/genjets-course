@@ -193,7 +193,7 @@ Then run the pwgh_main executable, which will calculate "numevts" (specified in 
 
 After the executable finishes running you will get pwgevents.lhe file which you can use in the following instructions for pythia8 event generation.
 
-More info about dijet production can be found in Docs/manual-BOX-Dijet.pdf located in dijet directory.
+More info about dijet production can be found in Docs/manual-BOX-Dijet.pdf located in dijet directory or [6](#sources).
 
 </details>
 
@@ -219,4 +219,11 @@ Also this project by itself is not enough for someone to learn the underlying ph
 
 # Sources
 
-1. [C. Bierlich et al "A comprehensive guide to the physics and usage of PYTHIA 8.3"](C. Bierlich et al)
+1. [C. Bierlich et al. "A comprehensive guide to the physics and usage of PYTHIA 8.3"](https://arxiv.org/abs/2203.11601)
+2. [Matteo Cacciari, Gavin P. Salam, Gregory Soyez "FastJet user manual"](https://arxiv.org/abs/1111.6097)
+3. [Johannes Bellm et al. "Herwig 7.0 / Herwig++ 3.0 Release Note"](https://arxiv.org/abs/1512.01178)
+4. [Andy Buckley et al. "LHAPDF6: parton density access in the LHC precision era"](https://arxiv.org/abs/1412.7420)
+5. [Simone Alioli, Paolo Nason, Carlo Oleari, Emanuele Re "A general framework for implementing NLO calculations in shower Monte Carlo programs: the POWHEG BOX"](https://arxiv.org/abs/1002.2581)
+6. [Simone Alioli, Keith Hamilton, Paolo Nason, Carlo Oleari, Emanuele Re "The POWHEG BOX user manual: dijet production"](https://usermanual.wiki/Pdf/manualBOXDijet.1397496255.pdf)
+7. Michael E. Peskin Daniel V. Schroeder "An Introduction to Quantum Field Theory"
+8. [Silvia Ferreres-Solé, Torbjörn Sjöstrand "The Space-Time Structure of Hadronization in the Lund Model"](https://arxiv.org/abs/1808.04619)
