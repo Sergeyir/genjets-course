@@ -158,7 +158,7 @@ export LD_LIBRARY_PATH=$PYTHIA8_PATH/lib:$LD_LIBRARY_PATH
 
 ## FASTJET3
 
-FASTJET3 can be installed via some package managers (such as pacman, dnf, portage, etc.). If your system package manager doesn't have fastjet repository you can follow instructions below. And if the following instructions don't work or you want to configure it for yourself follow the [FatJet3 official manual instructions](https://fastjet.fr/repo/fastjet-doc-3.5.1.pdf#page=58)
+FASTJET3 can be installed via some package managers (such as pacman, dnf, portage, etc.). If your system package manager doesn't have fastjet repository you can follow instructions below. And if the following instructions don't work or you want to configure it for yourself follow the [FatJet3 official manual instructions](https://fastjet.fr/repo/fastjet-doc-3.5.1.pdf#page=58). For debian try installing packages listed [here](https://packages.debian.org/source/sid/fastjet)
 
 <details>
 <summary> Manual installation </summary>
