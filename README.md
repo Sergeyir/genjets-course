@@ -185,13 +185,13 @@ The following line is but a comment but I recommend to change it so it would not
 
 Also change other important parameters if needed (for example ebeam1, ebeam2). And since we specified NNPDF31_nlo_as_0118 pdf set, don't forget to download it via lhapdf or manually.
 
-Then run the pwgh_main executable, which will calculate "numevts" (specified in powheg.input) number of events. Calculation will take some time, so you may as well at first set 100 events to check if it works and to estimate how long it will take to calculate more events on your machine (as stated in manual 50000 events should take around 3 hours).
+Then run the pwgh_main executable, which will calculate "numevts" (specified in powheg.input) number of events. Calculation as well as initialization will take some time (as stated in manual 50000 events should take around 3 hours).
 
 ```
 ../pwhg_main
 ```
 
-After the executable finishes running you will get pwgevent.lhe file which you can use in the following instructions for pythia8 event generation.
+After the executable finishes running you will get pwgevents.lhe file which you can use in the following instructions for pythia8 event generation.
 
 More info about dijet production can be found in Docs/manual-BOX-Dijet.pdf located in dijet directory.
 

@@ -124,7 +124,7 @@ export PYTHONPATH=$LHAPDF6_PATH/lib/python3.XX/dist-packages/lhapdf:$PYTHONPATH
 
 ## PYTHIA8
 
-PYTHIA8 can be installed via some package managers (such as pacman, dnf, portage, etc.). If your system package manager doesn't have pythia8 repository you can follow instructions below (additionally python-pythia8 may be required if available or similar package).
+PYTHIA8 can be installed via some package managers (such as pacman, dnf, portage, etc.). If your system package manager doesn't have pythia8 repository you can follow instructions below (additionally python-pythia8 may be required if available or similar package). Also you need to check whether pythia8 package depends on lhapdf package, otherwise you may need to install it manually since libpythia8lhapdf6.so library might not be installed.
 
 <details>
 <summary> Manual installation </summary>
