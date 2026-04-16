@@ -165,7 +165,7 @@ You can substitute "herwig/BasicPP.hepmc" argument for whatever file you want to
 <details>
 <summary> Calculating scattering amplitudes with PowHegBox </summary>
 
-After downloading and compiling code for dijets submodule, head into testrun-lhc directory. There you need to change file powheg.input (commenting out default PDF implementation and adding LHAPDF)
+After downloading and compiling code for dijets submodule, head into testrun-lhc directory. There you need to change file powheg.input by commenting out default PDF implementation and adding LHAPDF (LHA numbering corresponds to the LHAPDF ID in [LHAPDF pdf sets table](https://lhapdf.hepforge.org/pdfsets.html)
 
 ```
 ndns1 131            ! pdf set for hadron 1 (mlm numbering) -> ! ndns1 131            ! pdf set for hadron 1 (mlm numbering)
